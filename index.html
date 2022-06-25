@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DB Cleaner code</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!--Start of header. Header contains the side nav -->
+    <header class="position-fixed vh-100 w-auto  bg-danger z-999">
+        <nav class="ps-3 py-3 pe-5 bg-black h-100 position-relative d-flex flex-column justify-content-between w-nav " id="navContent">
+            <ul class="list-unstyled me-5">
+                <li class="text-white my-4 hover" id="nowPlaying1"><a class="hover removeActive active text-decoration-none text-white cursor-pointer" id="nowPlaying">Now Playing</a></li>
+                <li class="text-white my-4 hover" id="popular1"><a class="hover removeActive text-decoration-none text-white cursor-pointer" id="popular">Popular</a></li>
+                <li class="text-white my-4 hover" id="topRated1"><a class="hover removeActive text-decoration-none text-white cursor-pointer" id="topRated">Top Rated</a></li>
+                <li class="text-white my-4 hover" id="trending1"><a class="hover removeActive text-decoration-none text-white cursor-pointer" id="trending">Trending</a></li>
+                <li class="text-white my-4 hover" id="upcoming1"><a class="hover removeActive text-decoration-none text-white cursor-pointer" id="upcoming">Upcoming</a></li>
+                <li class="text-white my-4 hover" id="contactUs1"><a class="hover removeActive text-decoration-none text-white cursor-pointer" id="contactUs">Contact Us</a></li>
+            </ul>
+
+            <div class="py-3">
+                <div class="d-flex mb-3">
+                    <a href="#" class="me-3 text-decoration-none text-white"><i class="fa-brands fa-facebook-f cursor-pointer hover"></i></a>
+                    <a href="#" class="mx-3 text-decoration-none text-white"><i class="fa-brands fa-twitter cursor-pointer hover"></i></a>
+                    <a href="#" class="ms-3 text-decoration-none text-white"><i class="fa-solid fa-globe cursor-pointer hover"></i></a>
+                </div>
+
+                <div class="text-muted">
+                    <p>Copyright Â© 2019 All Rights Reserved.</p>
+                </div>
+            </div>
+    
+            <div class="position-absolute white-nav h-100 d-flex flex-column justify-content-between align-items-center px-2 py-4">
+                <img src="images/logo.png" class="w-60" alt="Website Logo">
+
+                    <i class="fa-solid fa-bars fs-3 cursor-pointer" id="navButton"></i>
+
+                <div class="d-flex flex-column gap-3">
+                    <i class="fa-solid fa-globe fs-5 cursor-pointer"></i>
+                    <i class="fa-solid fa-share-nodes fs-5 cursor-pointer"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End of Header section -->
+
+    <!-- Start of main content -->
+    <section class="container py-5">
+        <!-- Start Of searchbar Section -->
+        <div class="row my-5">
+            <div class="col-md-5">
+                <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="searchByName" placeholder="search by name">
+            </div>
+
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="searchMovie" placeholder="Search movie">
+            </div>
+        </div>
+        <!-- End of searchBar section -->
+
+
+        <!-- Display movies by API section -->
+        <div class="container-fluid">
+            <div class="row g-3" id="dataContainer">
+                <!-- Will get data from API -->
+            </div>
+        </div>
+
+
+
+        <!-- Start of contact Section -->
+        <div class="mt-5 container-fluid position-relative z-9 text-white" id="contactSection">
+            <h2>Contact Us...(see code Comments for regEx rules)</h2>
+            <div class="container-fluid overflow-hidden">
+                <div class="row gx-5">
+                  <div class="col-md-6">
+                   <div class="p-3 d-flex flex-column gap-3">
+                    <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="validName" placeholder="Enter Your Name">
+                   </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 d-flex flex-column gap-3">
+                        <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="validEmail" placeholder="Enter Email">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row gx-5">
+                    <div class="col-md-6">
+                     <div class="p-3 d-flex flex-column gap-3">
+                      <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="validPhone" placeholder="Enter Phone">
+                     </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="p-3 d-flex flex-column gap-3">
+                          <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="validAge" placeholder="Enter Age">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row gx-5">
+                    <div class="col-md-6">
+                     <div class="p-3 d-flex flex-column gap-3">
+                      <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="validPassword" placeholder="Enter Password">
+                     </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="p-3 d-flex flex-column gap-3">
+                          <input type="text" class="form-control bg-transparent border-bottom border-0 rounded-0 text-white" id="retypePassword" placeholder="Re-enter Password">
+                      </div>
+                    </div>
+                  </div>
+
+
+              </div>
+
+              <button class="btn btn-danger bg-transparent z-9">Submit</button>
+        </div>
+
+    </section>
+    <!-- End of main Content -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
